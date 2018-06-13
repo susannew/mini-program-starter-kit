@@ -6,7 +6,8 @@ export class Collection extends WebAPIStore {
   fetchApi: Object => Promise
   params: Object = {}
 
-  @observable meta = {
+  @observable
+  meta = {
     total: 0,
     page: 1,
     per_page: 10,
@@ -20,7 +21,7 @@ export class Collection extends WebAPIStore {
   }
 
   @fetchAction.flow
-  async* fetchMoreData() {
+  async *fetchMoreData() {
     const res = yield this.fetchApi({
       page: this.meta.page + 1,
       per_page: this.meta.per_page,

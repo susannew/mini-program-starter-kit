@@ -1,5 +1,5 @@
 import { flow, autoBind } from '@lib'
-import type { WebAPIStore } from "./web-api-store"
+import type { WebAPIStore } from './web-api-store'
 
 function fetchActionDecorator(target, name, descriptor, { bound = false, useFlow = false } = {}) {
   const { value } = descriptor

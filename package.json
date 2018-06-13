@@ -6,6 +6,8 @@
     "start": "gulp dev",
     "webpack": "gulp webpack",
     "lint": "gulp eslint",
+    "prettier:js": "prettier --write \"{config,src}/**/*.{js, wxs}\" --write gulpfile.js",
+    "prettier:style": "prettier --write \"src/**/*.{less, wxss, css}\" --parser=less",
     "staging": "cross-env NODE_ENV=staging gulp build",
     "build": "cross-env NODE_ENV=production gulp build"
   },
@@ -22,7 +24,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.6",
     "del": "^3.0.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "gulp": "gulpjs/gulp.git#4.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
@@ -38,6 +42,7 @@
     "gulp-revert-path": "^2.0.0",
     "gulp-util": "^3.0.8",
     "ipv4": "^1.0.4",
+    "prettier": "^1.13.5",
     "through-gulp": "^0.5.0",
     "webpack-stream": "^4.0.3",
     "yargs": "^11.0.0"

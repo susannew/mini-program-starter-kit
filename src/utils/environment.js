@@ -3,14 +3,14 @@ const NODE_ENV = process.env.NODE_ENV
 const PORT = process.env.PORT
 
 const environmentConfig = {
-  "development": {
-    apiOrigin: `https://cnodejs.org`
+  development: {
+    apiOrigin: `https://cnodejs.org`,
   },
-  "staging": {
-    apiOrigin: `http://${ipv4}:${PORT}`
+  staging: {
+    apiOrigin: `http://${ipv4}:${PORT}`,
   },
-  "production": {
-    apiOrigin: `http://${ipv4}:${PORT}`
+  production: {
+    apiOrigin: `http://${ipv4}:${PORT}`,
   },
 }
 
