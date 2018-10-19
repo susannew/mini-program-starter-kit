@@ -13,6 +13,7 @@ const changed = require('gulp-changed')
 const ipv4 = require('ipv4')
 const notifier = require('node-notifier')
 const miniProgram = require('./gulp-mini-program')
+const ejs = require("gulp-ejs")
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const settings = {
@@ -58,6 +59,7 @@ const wxmlCopy = (src = srcFiles.html, dest = 'dist') => {
         wxappScreenWidth: 750,
       }),
     )
+    .pipe(ejs())
     .pipe(gulp.dest(dest))
 }
 

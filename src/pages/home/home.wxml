@@ -1,1 +1,7 @@
-<view class="container">home</view>
+<view class="container">
+
+  <% num = 10 %>
+  <block wx:for="{{ nodes }}" wx:key="{{ index }}">
+    <%- include("tt.wxml")%>
+  </block>
+</view>

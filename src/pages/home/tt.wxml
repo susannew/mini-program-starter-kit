@@ -1,0 +1,10 @@
+<% if(num) { %>
+
+<% num= num-1%>
+<view class="{{ item.className }}">
+  {{ item.text }}
+  <block wx:for="{{ item.children }}" wx:key="{{ index }}">
+    <%- include("tt.wxml")%>
+  </block>
+</view>
+<% } %>
