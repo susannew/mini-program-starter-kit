@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "shadow-view": "/react-weapp/shadow-view/index"
+  }
+}

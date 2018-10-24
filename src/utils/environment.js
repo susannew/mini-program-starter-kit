@@ -4,7 +4,7 @@ const PORT = process.env.PORT
 
 const environmentConfig = {
   development: {
-    apiOrigin: `http://${ipv4}:${PORT}`,
+    apiOrigin: 'https://discovery.tripadvisor.cn',
   },
   staging: {
     apiOrigin: `http://${ipv4}:${PORT}`,

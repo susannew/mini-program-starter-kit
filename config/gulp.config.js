@@ -58,6 +58,7 @@ const wxmlCopy = (src = srcFiles.html, dest = 'dist') => {
         wxappScreenWidth: 750,
       }),
     )
+    .pipe(rename({ extname: '.wxml' }))
     .pipe(gulp.dest(dest))
 }
 

@@ -18,6 +18,11 @@ module.exports = function runWebpack() {
       filename: '[name].js',
     },
     devtool: false,
+    resolve: {
+      alias: {
+        'react-dom': path.resolve('config/react-dom-fake')
+      }
+    },
     plugins: [
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),

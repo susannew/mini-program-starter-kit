@@ -1,6 +1,7 @@
 {
   "extends": [
-    "beansmile"
+    "beansmile",
+    "beansmile/react-rule"
   ],
   "rules": {
     "pathname/match-name": [

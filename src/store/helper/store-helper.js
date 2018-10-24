@@ -1,6 +1,6 @@
 import { action, observable, configure } from 'mobx'
 
-configure({ enforceActions: process.env.NODE_ENV !== 'production' })
+// configure({ enforceActions: process.env.NODE_ENV === 'production' ? 'never' : 'observed' })
 
 export class StoreHelper {
   static _instanceList: Map

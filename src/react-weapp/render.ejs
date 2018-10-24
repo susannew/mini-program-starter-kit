@@ -1,0 +1,37 @@
+<% list.forEach(num => { %>
+<template name="render_<%= num %>">
+  <block wx:for="{{ children }}" wx:for-item="node" wx:key="*this">
+    <block wx:if="{{ !nodes[node].type && nodes[node].text }}">
+      {{ nodes[node].text }}
+    </block>
+    <%
+      function getProps(type) {
+        const props = []
+        elements[type].attr.forEach(prop => {
+          props.push(
+            `${prop}="{{nodes[node].props['${prop}']}}"`
+          )
+        })
+        elements[type].event.forEach(prop => {
+          props.push(
+            `${prop}="{{nodes[node].props._event.${prop} ? 'handleEvent' : undefined }}"`
+          )
+        })
+        return props
+      }
+
+      const result = Object.keys(elements).map(type => {
+        const a = `<${type} wx:elif="{{ nodes[node].type == '${type}' }}" data-node="{{ node }}" ${getProps(type).join(' ')}${elements[type].block ? '' : '/'}>`
+        if (!elements[type].block) return a
+        const b = `<block wx:if="{{ nodes[node].text }}">{{ nodes[node].text }}</block>`
+        const c = `<template wx:else is="render_${num + 1}" data="{{ children: nodes[node].children, nodes }}"/>`
+        const d = `</${type}>`
+        return a + b + c + d
+      })
+    %>
+    <%- result.join('') %>
+  </block>
+</template>
+<% }) %>
+
+<template is="render_{{ 1 }}" data="{{  nodes, children: [root] }}"/>

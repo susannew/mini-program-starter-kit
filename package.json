@@ -19,10 +19,12 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.4.1",
     "cross-env": "^5.1.6",
     "del": "^3.0.0",
+    "ejs": "^2.6.1",
     "eslint-config-beansmile": "^1.1.0",
     "fs-extra": "^7.0.0",
     "gulp": "gulpjs/gulp.git#4.0",
@@ -50,6 +52,9 @@
   "dependencies": {
     "core-decorators": "^0.20.0",
     "lodash": "^4.17.10",
-    "mobx": "^4.2.0"
+    "mobx": "^4.2.0",
+    "mobx-react": "^5.3.6",
+    "react": "^16.6.0",
+    "react-reconciler": "^0.15.0"
   }
 }

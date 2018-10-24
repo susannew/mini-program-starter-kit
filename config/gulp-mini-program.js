@@ -3,6 +3,7 @@ const fs = require('fs-extra')
 const _ = require('lodash')
 const path = require('path')
 const runWebpack = require('./webpack-runner')
+const { ejs_run } = require('./ejs-bin')
 
 function miniProgram(settings) {
   function replaceContent(file, content) {
@@ -35,6 +36,7 @@ function miniProgram(settings) {
       callback()
     },
     async function (cb) {
+      ejs_run()
       if (!global.__hasNewImports) return cb()
       try {
         let str = ''
