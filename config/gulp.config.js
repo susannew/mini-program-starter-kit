@@ -13,6 +13,7 @@ const changed = require('gulp-changed')
 const ipv4 = require('ipv4')
 const notifier = require('node-notifier')
 const miniProgram = require('./gulp-mini-program')
+const weapp = require('../lib/gulp-weapp')
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const settings = {
@@ -36,6 +37,7 @@ const srcFiles = {
   js: ['src/**/*.js', 'src/**/*.wxs'],
   style: ['src/**/*.less', 'src/**/*.wxss'],
   html: ['src/**/*.wxml'],
+  weapp: ['src/**/*.weapp'],
   other: ['src/**/*.json', 'src/**/*.{png,svg,jpg,jpeg}'],
 }
 
@@ -58,6 +60,22 @@ const wxmlCopy = (src = srcFiles.html, dest = 'dist') => {
         wxappScreenWidth: 750,
       }),
     )
+    .pipe(gulp.dest(dest))
+}
+
+const weappCopy = (src = srcFiles.weapp, dest = 'dist') => {
+  return gulp
+    .src(src, { base: 'src' })
+    .pipe(changed(dest))
+    .on('error', handleError)
+    .pipe(
+      px2rpx({
+        screenWidth: 375,
+        wxappScreenWidth: 750,
+      }),
+    )
+    .pipe(weapp())
+    .pipe(rename({ extname: '.wxml' }))
     .pipe(gulp.dest(dest))
 }
 
@@ -108,5 +126,6 @@ module.exports = {
   buildJS,
   wxmlCopy,
   lint,
+  weappCopy,
   srcFiles,
 }

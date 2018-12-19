@@ -40,9 +40,12 @@
     "gulp-revert-path": "^2.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "html-minifier": "^3.5.21",
+    "html2json": "^1.0.2",
     "ipv4": "^1.0.4",
     "node-notifier": "^5.2.1",
     "ora": "^3.0.0",
+    "prettier": "^1.15.3",
     "through-gulp": "^0.5.0",
     "webpack": "^4.16.1",
     "yargs": "^11.0.0"

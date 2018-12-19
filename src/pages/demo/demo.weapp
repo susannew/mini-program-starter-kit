@@ -1,0 +1,5 @@
+<view>{{ getTitle() }}</view>
+<view wx:for="{{ store.array }}" wx:key="{{ item }}" bindtap="handleAdd">
+  <text>{{ item }}</text>
+</view>
+<counter/>

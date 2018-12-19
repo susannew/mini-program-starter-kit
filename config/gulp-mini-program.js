@@ -45,7 +45,7 @@ function miniProgram(settings) {
           const file = `module.exports=require('${libPath}').${name}`
           await fs.outputFile(sourcePath, file)
         }))
-        await fs.writeFile(path.resolve('src/lib.js'), str)
+        await fs.writeFile(path.resolve('_lib.js'), str)
         await runWebpack()
         global.__hasNewImports = false
         cb()
@@ -53,7 +53,7 @@ function miniProgram(settings) {
         err.plugin = 'gulp-mini-program'
         this.emit('error', err)
       } finally {
-        await fs.remove(path.resolve('src/lib.js'))
+        await fs.remove(path.resolve('_lib.js'))
       }
     },
   )

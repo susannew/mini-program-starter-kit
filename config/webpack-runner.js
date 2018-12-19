@@ -9,7 +9,7 @@ module.exports = function runWebpack() {
     mode: NODE_ENV === 'development' ? 'development' : 'production',
     target: 'node',
     entry: {
-      index: path.resolve('src/lib.js'),
+      index: path.resolve('_lib.js'),
     },
     output: {
       path: path.resolve('dist/lib'),

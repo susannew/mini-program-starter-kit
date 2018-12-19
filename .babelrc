@@ -26,7 +26,8 @@
           "@store$": "./src/store/index.js",
           "@store": "./src/store",
           "@utils$": "./src/utils/index.js",
-          "@utils": "./src/utils"
+          "@utils": "./src/utils",
+          "@weapp$": "./src/weapp/index.js"
         }
       }
     ],
